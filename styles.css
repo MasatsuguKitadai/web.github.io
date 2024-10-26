@@ -276,3 +276,44 @@ ul {
   font-family: "Hina2ndGrade", sans-serif;
   color: #333;
 }
+
+.is-style-letter {
+  position: relative;
+  width: 70vw;
+  height: auto;
+  margin: 5vh auto;
+  padding: 2em;
+  border: 10px solid transparent;
+  border-radius: 4px;
+  background: linear-gradient(#f9f9f9, #f9f9f9),
+    repeating-linear-gradient(
+      -45deg,
+      #b9cce5,
+      #b9cce5 3.25%,
+      #fff 3.25%,
+      #fff 4.25%,
+      #f1c3c1 4.25%,
+      #f1c3c1 7.5%,
+      #fff 7.5%,
+      #fff 8.5%
+    );
+  background-clip: padding-box, border-box;
+  background-origin: border-box;
+}
+
+.is-style-letter *:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.is-style-letter h2 {
+  font-size: 2.5em;
+  text-align: left;
+  color: #333;
+}
+
+.is-style-letter h3 {
+  font-size: 2.5em;
+  text-align: right;
+  color: #333;
+}
