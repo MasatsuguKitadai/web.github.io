@@ -1,0 +1,455 @@
+/* --- 基本設定 (変更) --- */
+html,
+body {
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", Meiryo, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fdfaf6;
+  color: #333;
+
+  /* ★変更: 縦スクロールのみ許可 */
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+/* --- ログイン画面 (変更なし) --- */
+#login-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  padding: 20px;
+}
+.login-box {
+  background: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+.login-box h2 {
+  font-family: "Kaushan Script", cursive;
+  font-size: 2.5em;
+  color: #d99058;
+  margin-top: 0;
+}
+#password-input {
+  width: 200px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  margin-top: 10px;
+}
+.login-box button {
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #d99058;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background-color 0.3s;
+}
+.login-box button:hover {
+  background-color: #b8794a;
+}
+#error-message {
+  color: red;
+  font-size: 0.9em;
+  height: 1.2em;
+  margin-top: 15px;
+}
+
+/* --- ★★★ 旅行コンテンツ (大幅に変更) ★★★ --- */
+#trip-content {
+  /* HTML側で style="display: none" が設定されています。
+    JSによって "display: block" に変更されます。
+  */
+  display: none; /* 初期状態 (JSで上書きされる) */
+
+  /* ★変更: 縦スクロールのコンテナ設定 */
+  width: 100%;
+  height: 100vh; /* 画面高さいっぱいに */
+  overflow-y: auto; /* 縦スクロールを有効化 */
+  overflow-x: hidden; /* 横スクロールを禁止 */
+
+  /* ★変更: スクロールスナップ設定 (親要素) */
+  scroll-snap-type: y mandatory; /* Y軸(縦)方向 / 必須のスナップ */
+
+  /* スクロールバーを隠す (任意) */
+  -ms-overflow-style: none; /* IE, Edge */
+  scrollbar-width: none; /* Firefox */
+}
+#trip-content::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+/* --- ★★★ ページ全体のスタイル (変更) ★★★ --- */
+.page {
+  /* ★変更: 各ページが画面サイズぴったりになるように */
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box; /* paddingを含めて幅を計算 */
+
+  /* ★追加: ページ内で縦に長い場合にスクロールできるように */
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  /* ★追加: スクロールスナップ設定 (子要素) */
+  scroll-snap-align: start; /* ページの先頭でスナップ */
+
+  padding: 40px 25px;
+  border-bottom: none;
+
+  /* ★★★ ここから追加 (フェードイン用) ★★★ */
+  /* アニメーションの初期状態 (透明で少し下にズレる) */
+  opacity: 0;
+
+  /* アニメーションの変化を滑らかに */
+  transition: opacity 1s ease-out, transform 0.8s ease-out;
+  /* ★★★ ここまで追加 (フェードイン用) ★★★ */
+}
+
+/* (中略) */
+
+/* --- メッセージセクション (変更なし) --- */
+.message-section {
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.message-section h1 {
+  font-family: "Kaushan Script", cursive;
+  font-size: 4em;
+  color: #d99058;
+  line-height: 1.2;
+  margin: 30px 0;
+}
+
+.message-section p {
+  font-size: 1em;
+  color: #777;
+  margin: 5px 0;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+}
+
+/* --- カバーページ (変更なし) --- */
+.cover {
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.cover h1 {
+  font-family: "Kaushan Script", cursive;
+  font-size: 4em;
+  color: #d99058;
+  line-height: 1.2;
+  margin: 20px 0;
+}
+
+.cover .date {
+  font-size: 1.3em;
+  color: #777;
+  margin-top: 10px;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+}
+
+.cover .destination {
+  font-size: 1.3em;
+  color: #777;
+  margin-top: 5px;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+}
+
+/* --- メンバーセクション --- */
+.member-section {
+  /* 縦スナップページの中央揃え */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.member-section h2 {
+  font-family: "Kaushan Script", cursive;
+  font-size: 1.6em;
+  color: #d99058;
+  border-bottom: 2px solid #f0e6dd;
+}
+
+.member-section h3 {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-size: 1.4em;
+  color: #777;
+  font-weight: normal;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+/* メンバーを並べるグリッド */
+.member-grid {
+  display: grid;
+  /* スマホでは1列、幅380px以上なら2列 */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px; /* カード間の隙間 */
+  width: 90%;
+  max-width: 600px;
+  margin-top: 30px;
+}
+
+/* メンバーカード */
+.member-card {
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.member-card h3 {
+  font-size: 1.1em;
+  color: #777; /* 文字色 (#2c3e50) から変更 */
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.member-card p {
+  font-size: 0.9em;
+  color: #777; /* 文字色 (#2c3e50) から変更 */
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* メンバーの写真 (またはアイコン) */
+.member-photo {
+  width: 100px;
+  height: 100px;
+  background-color: #777; /* #fff など、写真の背景にしたい色があれば指定 */
+  border-radius: 50%; /* 円形にする */
+  margin: 0 auto 10px auto; /* 中央揃え */
+  overflow: hidden;
+}
+
+/* 写真を使う場合はimgタグのコメントアウトを外す */
+.member-photo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover; /* 画像がはみ出ないように調整 */
+}
+
+/* --- 各日のプラン (変更なし) --- */
+.day-plan {
+  display: flex;
+  flex-direction: column; /* 子要素を縦に並べる */
+  justify-content: center; /* 縦方向の中央揃え */
+  align-items: center; /* 横方向の中央揃え */
+}
+
+.day-plan h2 {
+  font-family: "Kaushan Script", cursive;
+  font-size: 1.6em;
+  color: #d99058;
+  border-bottom: 2px solid #f0e6dd;
+}
+
+.day-plan h3 {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-size: 1.4em;
+  color: #777;
+  font-weight: normal;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+.timeline {
+  list-style: none;
+  padding-left: 0;
+  position: relative;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  width: 90%; /* 例: 親要素(ページ)の90%の幅 */
+  max-width: 600px; /* 例: PCでも広がりすぎないように最大幅を指定 */
+}
+
+.timeline:before {
+  content: "";
+  position: absolute;
+  left: 25px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: #f0e6dd;
+}
+
+.timeline li {
+  padding-left: 50px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.timeline li::before {
+  content: "●";
+  position: absolute;
+  left: 17px;
+  top: 0;
+  font-size: 1.2em;
+  color: #d99058;
+}
+
+.timeline li strong {
+  font-size: 1.2em;
+  color: #333;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* --- 写真セクション (変更なし) --- */
+
+.photo-section {
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.photo-section h1 {
+  font-family: "Kaushan Script", cursive;
+  font-size: 4em;
+  color: #d99058;
+  line-height: 1.2;
+  margin: 20px 0;
+}
+
+.photo-button {
+  display: inline-block;
+  background-color: #d99058;
+  color: #ffffff;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+/* --- メモセクション (変更なし) --- */
+
+.memo-section {
+  display: flex;
+  flex-direction: column; /* 子要素を縦に並べる */
+  justify-content: center; /* 縦方向の中央揃え */
+  align-items: center; /* 横方向の中央揃え */
+}
+
+.memo-section h2 {
+  font-family: "Kaushan Script", cursive;
+  font-size: 1.6em;
+  color: #d99058;
+  border-bottom: 2px solid #f0e6dd;
+}
+
+.memo-section h3 {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-size: 1.4em;
+  color: #777;
+  font-weight: normal;
+  margin-top: 5px;
+}
+
+.checklist,
+.contact-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0;
+}
+
+.checklist li {
+  padding: 5px 0 5px 30px;
+  position: relative;
+}
+
+.checklist li::before {
+  content: "☐";
+  position: absolute;
+  left: 0;
+  font-size: 1.2em;
+  color: #d99058;
+}
+
+.space {
+  height: 20px;
+}
+
+/* 画面に入ったときに適用するクラス */
+.page.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ログイン画面は最初から表示しておく 
+  (is-visible がなくても opacity: 1 にする) 
+*/
+#login-screen.page {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- 印刷設定 (変更なし) --- */
+@media print {
+  html,
+  body {
+    overflow: visible;
+    height: auto;
+  }
+  #trip-content {
+    display: block !important;
+    height: auto;
+    width: auto;
+    overflow: visible;
+  }
+  .page {
+    height: auto;
+    width: 100%;
+    overflow: visible;
+    page-break-after: always;
+  }
+  .page:last-child {
+    page-break-after: auto;
+  }
+  body {
+    background-color: #fff;
+  }
+  .page {
+    box-shadow: none;
+    margin: 0;
+    border-radius: 0;
+    max-width: 100%;
+  }
+  #login-screen,
+  .photo-section {
+    display: none;
+  }
+  .timeline:before,
+  .timeline li::before {
+    color: #ccc;
+  }
+  .photo-button {
+    display: none;
+  }
+}

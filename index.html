@@ -1,20 +1,160 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <meta charset="utf-8" />
-    <title>Login</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Her Birthday Trip</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- フォント -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Kaushan+Script"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
+
   <body>
-    <header></header>
-    <main>
-      <div class="top_image">
-        <h1>&#x1f382; Happy Birthday for Rene &#x1f382;</h1>
-        <img src="./img/Top.jpg" alt="Circular Image" class="circle-image" />
+    <div id="login-screen" class="page">
+      <div class="login-box">
+        <h2>Birthday Trip 🎂</h2>
+        <p>パスワードを入力してください:</p>
+        <input
+          type="password"
+          id="password-input"
+          onkeyup="if(event.key === 'Enter') checkPassword();"
+        />
+        <button onclick="checkPassword()">Enter</button>
+        <p id="error-message"></p>
       </div>
-    </main>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="password.js"></script>
+    </div>
+
+    <div id="trip-content" style="display: none">
+      <section class="page message-section">
+        <h1>Happy Birthday!!</h1>
+        <p>27歳のお誕生日おめでとう!!</p>
+        <p>今回は、念願のディズニー旅行です</p>
+        <p>たくさんたのしい思い出作ろうね</p>
+        <div class="space"></div>
+        <p>それでは、行ってみよう!!</p>
+      </section>
+
+      <section class="page cover">
+        <h1>Rene's<br />Birthday Trip</h1>
+        <p class="date">2025.12.13 - 2025.12.10</p>
+        <p class="destination">Tokyo Disney Resort</p>
+      </section>
+
+      <section class="page member-section">
+        <h2>MEMBERS</h2>
+
+        <div class="member-grid">
+          <div class="member-card">
+            <div class="member-photo">
+              <img src="./images/rene.jpg" alt="Reneの写真" />
+            </div>
+            <h3>Rene</h3>
+            <p>27歳</p>
+          </div>
+
+          <div class="member-card">
+            <div class="member-photo">
+              <img src="./images/masatsugu.jpg" alt="Masatsuguの写真" />
+            </div>
+            <h3>Masatsugu</h3>
+            <p>26歳</p>
+            <p>プランナー</p>
+            <p>運転手</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="page day-plan">
+        <h2>DAY 1 : 12/13 Sat</h2>
+        <h3><strong>東京クリスマス×のんびりドライブ</strong></h3>
+
+        <ul class="timeline">
+          <li><strong>08:00 名古屋 出発</strong> 朝早いけど頑張ろうね!</li>
+          <li><strong>08:30 スタバ 東別院店 </strong> ホットドリンクをGET☕</li>
+          <li><strong>09:00 名古屋→東京</strong> クルマの中でカラオケ大会🎤</li>
+          <li><strong>12:00 ランチ🍴</strong></li>
+          <li><strong>18:00 ディナー🍽️</strong></li>
+          <li><strong>19:30 イルミネーション🎄</strong></li>
+          <li><strong>21:00 変なホテル 西葛西 </strong> ホテル到着</li>
+          <li><strong>23:00 就寝🛏</strong></li>
+        </ul>
+      </section>
+
+      <section class="page day-plan">
+        <h2>DAY 2 : 12/14 Sun</h2>
+        <h3><strong>東京ディズニーシー</strong></h3>
+
+        <ul class="timeline">
+          <li>
+            <strong>06:30 ホテル→東京ディズニーシー🏰</strong> ホテルを出発!!
+          </li>
+          <li><strong>07:30 ゲート 到着</strong>寒いけど並ぶよ カイロ必須🔥</li>
+          <li><strong>09:00 入場!!🐭</strong> いざ夢の国へ</li>
+          <li><strong>12:00 ランチ🍴</strong></li>
+          <li>
+            <strong>20:00 お土産購入🎁</strong>クルマだからって買いすぎ注意!!
+          </li>
+          <li>
+            <strong>21:00 退場🌟</strong>楽しい思い出がたくさんありますように...
+          </li>
+          <li>
+            <strong>21:30 東京→名古屋</strong> 真夜中ドライブ 安全運転で帰るよ!
+          </li>
+          <li>
+            <strong>02:00 名古屋 到着</strong>
+            楽しい旅をありがとう!おつかれさま!!
+          </li>
+        </ul>
+      </section>
+
+      <section class="page photo-section">
+        <h1>Photo</h1>
+        <a
+          href="[ここにGoogleフォトの共有アルバムURLを貼る]"
+          target="_blank"
+          class="photo-button"
+        >
+          思い出のアルバムを開く
+        </a>
+
+        <p class="print-only">（このページは印刷されません）</p>
+      </section>
+
+      <section class="page memo-section">
+        <h2>MEMO &amp; LIST</h2>
+
+        <h3>持ち物リスト</h3>
+        <ul class="checklist">
+          <li>着替え (2日分)</li>
+          <li>充電器 (スマホ・カメラ用)</li>
+          <li>スキンケア用品</li>
+          <li>ハンカチ</li>
+          <div class="space"></div>
+          <li>パートナーへの不満</li>
+          <li>仲直りする勇気</li>
+          <li>旅行を楽しむポジティブな気持ち</li>
+          <li>思いやり</li>
+          <li>笑顔</li>
+        </ul>
+
+        <div class="space"></div>
+
+        <h3>緊急連絡先</h3>
+        <ul class="contact-list">
+          <li>変なホテル 西葛西：080-5894-3770</li>
+        </ul>
+      </section>
+    </div>
+    <script src="script.js"></script>
   </body>
-  <fotter></fotter>
 </html>
