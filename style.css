@@ -187,14 +187,14 @@ body {
 
 .member-section h2 {
   font-family: "Kaushan Script", cursive;
-  font-size: 1.6em;
+  font-size: 1.2em;
   color: #d99058;
   border-bottom: 2px solid #f0e6dd;
 }
 
 .member-section h3 {
   font-family: "M PLUS Rounded 1c", sans-serif;
-  font-size: 1.4em;
+  font-size: 1.2em;
   color: #777;
   font-weight: normal;
   margin-top: 10px;
@@ -261,14 +261,14 @@ body {
 
 .day-plan h2 {
   font-family: "Kaushan Script", cursive;
-  font-size: 1.6em;
+  font-size: 1.2em;
   color: #d99058;
   border-bottom: 2px solid #f0e6dd;
 }
 
 .day-plan h3 {
   font-family: "M PLUS Rounded 1c", sans-serif;
-  font-size: 1.4em;
+  font-size: 1.2em;
   color: #777;
   font-weight: normal;
   margin-top: 10px;
@@ -295,6 +295,7 @@ body {
 }
 
 .timeline li {
+  font-size: 0.8rem;
   padding-left: 50px;
   margin-bottom: 20px;
   position: relative;
@@ -305,12 +306,12 @@ body {
   position: absolute;
   left: 17px;
   top: 0;
-  font-size: 1.2em;
+  font-size: 0.9rem;
   color: #d99058;
 }
 
 .timeline li strong {
-  font-size: 1.2em;
+  font-size: 0.9rem;
   color: #333;
   display: block;
   margin-bottom: 5px;
@@ -359,14 +360,14 @@ body {
 
 .memo-section h2 {
   font-family: "Kaushan Script", cursive;
-  font-size: 1.6em;
+  font-size: 1.2em;
   color: #d99058;
   border-bottom: 2px solid #f0e6dd;
 }
 
 .memo-section h3 {
   font-family: "M PLUS Rounded 1c", sans-serif;
-  font-size: 1.4em;
+  font-size: 1.2em;
   color: #777;
   font-weight: normal;
   margin-top: 5px;
