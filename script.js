@@ -44,10 +44,54 @@ function setupScrollObserver() {
   }
 }
 
+// === ★★★ カウントダウン機能 (ここから新規追加) ★★★ ===
+
+// ターゲットの日付 (HTMLの 2025.12.13 に合わせます)
+const targetDate = new Date("2025-12-13T00:00:00");
+
+// function updateCountdown() {
+//   const countdownElement = document.getElementById("countdown");
+//   if (!countdownElement) return; // 要素がなければ何もしない
+
+//   const now = new Date();
+//   const diff = targetDate - now; // ターゲットまでの差 (ミリ秒)
+
+//   // 2桁にゼロパディングするヘルパー関数
+//   const padZero = (num) => num.toString().padStart(2, "0");
+
+//   // === ターゲット日時を過ぎた場合 ===
+//   if (diff <= 0) {
+//     countdownElement.innerHTML = "🎉 <strong>Happy Birthday Trip!</strong> 🎉";
+//     // タイマーを停止 (setIntervalを停止)
+//     if (window.countdownInterval) {
+//       clearInterval(window.countdownInterval);
+//     }
+//     return;
+//   }
+
+//   // === 残り時間を計算 ===
+//   const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+//   const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+//   const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+//   const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+//   // === HTMLを更新 ===
+//   countdownElement.innerHTML = `
+//     <strong>${days}</strong> days
+//   `;
+// }
+
+function startCountdown() {
+  // 1. ページ読み込み時にまず1回実行
+  updateCountdown();
+  // 2. 1秒ごとに updateCountdown を実行 (グローバル変数にタイマーIDを保存)
+  window.countdownInterval = setInterval(updateCountdown, 1000);
+}
+
 // === パスワードチェック関数 ===
 function checkPassword() {
   // --- ここに好きなパスワードを設定してください ---
-  const correctPassword = "test"; // 例: 旅行の開始日
+  const correctPassword = "happy_birthday"; // 例: 旅行の開始日
   // ------------------------------------------
 
   const passwordInput = document.getElementById("password-input");
@@ -72,3 +116,5 @@ function checkPassword() {
     passwordInput.value = ""; // 入力欄をクリア
   }
 }
+
+startCountdown();
