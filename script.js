@@ -62,7 +62,7 @@ function startCountdown() {
 // === パスワードチェック関数 ===
 function checkPassword() {
   // ★パスワード設定（任意に変更してください）
-  const correctPassword = "1213";
+  const correctPassword = "rene";
 
   const passwordInput = document.getElementById("password-input");
   const errorMessage = document.getElementById("error-message");
