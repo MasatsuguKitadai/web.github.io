@@ -91,7 +91,7 @@ function startCountdown() {
 // === パスワードチェック関数 ===
 function checkPassword() {
   // --- ここに好きなパスワードを設定してください ---
-  const correctPassword = "happy_birthday"; // 例: 旅行の開始日
+  const correctPassword = ""; // 例: 旅行の開始日
   // ------------------------------------------
 
   const passwordInput = document.getElementById("password-input");
